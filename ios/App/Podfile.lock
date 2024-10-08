@@ -22,6 +22,8 @@ PODS:
     - Capacitor
   - CapacitorStatusBar (6.0.1):
     - Capacitor
+  - CapawesomeCapacitorFilePicker (6.1.0):
+    - Capacitor
   - CapawesomeTeamCapacitorFileOpener (6.1.0):
     - Capacitor
 
@@ -38,6 +40,7 @@ DEPENDENCIES:
   - "CapacitorShare (from `../../node_modules/.pnpm/@capacitor+share@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/share`)"
   - "CapacitorSplashScreen (from `../../node_modules/.pnpm/@capacitor+splash-screen@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/splash-screen`)"
   - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/status-bar`)"
+  - "CapawesomeCapacitorFilePicker (from `../../node_modules/.pnpm/@capawesome+capacitor-file-picker@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome/capacitor-file-picker`)"
   - "CapawesomeTeamCapacitorFileOpener (from `../../node_modules/.pnpm/@capawesome-team+capacitor-file-opener@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome-team/capacitor-file-opener`)"
 
 EXTERNAL SOURCES:
@@ -65,6 +68,8 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/.pnpm/@capacitor+splash-screen@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/splash-screen"
   CapacitorStatusBar:
     :path: "../../node_modules/.pnpm/@capacitor+status-bar@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/status-bar"
+  CapawesomeCapacitorFilePicker:
+    :path: "../../node_modules/.pnpm/@capawesome+capacitor-file-picker@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome/capacitor-file-picker"
   CapawesomeTeamCapacitorFileOpener:
     :path: "../../node_modules/.pnpm/@capawesome-team+capacitor-file-opener@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome-team/capacitor-file-opener"
 
@@ -81,8 +86,9 @@ SPEC CHECKSUMS:
   CapacitorShare: 591ae4693d85686ceb590db8e8b44aa014ec6490
   CapacitorSplashScreen: 250df9ef8014fac5c7c1fd231f0f8b1d8f0b5624
   CapacitorStatusBar: b81d4fb5d4e0064c712018071b3ab4b810b39a63
+  CapawesomeCapacitorFilePicker: abd66735806935246403855cbe62fee8e299cdc5
   CapawesomeTeamCapacitorFileOpener: 7188d2bd3a5cdb3adb5dc26a6a8f8ca32a11b3c4
 
-PODFILE CHECKSUM: ce81ae27d9e84345ae4dafe788ef51a508aa7de0
+PODFILE CHECKSUM: 06100f7c8dd338856798dc63737d8695c2403964
 
 COCOAPODS: 1.15.2
