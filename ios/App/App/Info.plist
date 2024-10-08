@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-	<dict>
-		<key>ITSAppUsesNonExemptEncryption</key>
-		<false />
-		<key>NSPrivacyAccessedAPITypes</key>
-		<array>
-			<!-- Add this dict entry to the array if the PrivacyInfo file already exists -->
-			<dict>
-				<key>NSPrivacyAccessedAPIType</key>
-				<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
-				<key>NSPrivacyAccessedAPITypeReasons</key>
-				<array>
-					<string>C617.1</string>
-				</array>
-			</dict>
-		</array>
-		<key>UIFileSharingEnabled</key>
-		<true />
-		<key>LSSupportsOpeningDocumentsInPlace</key>
-		<true />
-		<key>NSCameraUsageDescription</key>
-		<string>Camera used to add waiter's avatar</string>
-		<key>NSPhotoLibraryAddUsageDescription</key>
-		<string>This app requires access to the photo library.</string>
-		<key>NSPhotoLibraryUsageDescription</key>
-		<string>This app requires access to the camera.</string>
-		<key>CFBundleDevelopmentRegion</key>
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
 		<string>en</string>
 		<key>CFBundleDisplayName</key>
 		<string>Tips Share</string>
@@ -86,5 +62,16 @@
 		<string>We use the library to get a photo for the Avatar</string>
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>We use the library to get a photo for the Avatar</string>
-	</dict>
+		<key>NSPrivacyAccessedAPITypes</key>
+		<array>
+			<dict>
+				<key>NSPrivacyAccessedAPIType</key>
+				<string>NSPrivacyAccessedAPICategoryFileTimestamp</string>
+				<key>NSPrivacyAccessedAPITypeReasons</key>
+				<array>
+					<string>C617.1</string>
+				</array>
+			</dict>
+		</array>
+</dict>
 </plist>
