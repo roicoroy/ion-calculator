@@ -4,7 +4,7 @@ import {
   LoadingController,
   ModalController,
   PopoverController,
-} from '@ionic/angular';
+} from '@ionic/angular/standalone';
 import {
   AlertOptions,
   LoadingOptions,

@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     { title: 'Points', url: '/tabs/tab2', icon: 'options' },
     { title: 'Settings', url: '/tabs/tab3', icon: 'cog' },
     { title: 'Saved Entries', url: '/saved-entries', icon: 'receipt' },
-    { title: 'file-opener', url: '/file-opener', icon: 'receipt' },
+    // { title: 'file-opener', url: '/file-opener', icon: 'receipt' },
   ];
 
   title = 'calculator';
