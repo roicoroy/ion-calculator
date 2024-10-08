@@ -1,20 +1,43 @@
-import { Routes } from '@angular/router';
+import { Route } from '@angular/router';
+import { TutorialGuard } from './services/guards/tutorial.guard';
 
-export const routes: Routes = [
+export const appRoutes: Route[] = [
   {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
     path: 'file-opener',
     loadChildren: () =>
-      import('./file-opener/file-opener.module').then(
+      import('./pages/file-opener/file-opener.module').then(
         m => m.FileOpenerPageModule,
       ),
   },
   {
     path: '',
-    redirectTo: 'file-opener',
-    pathMatch: 'full',
+    loadChildren: () => import('./pages/tabs/tabs.routes').then((m) => m.routes),
+    canActivate: [TutorialGuard]
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
+    canActivate: [TutorialGuard]
+  },
+  {
+    path: 'result',
+    loadComponent: () => import('./pages/result/result.page').then((m) => m.ResultPage),
+  },
+  {
+    path: 'tutorial',
+    loadComponent: () => import('./pages/tutorial/tutorial.page').then(m => m.TutorialPage)
+  },
+  {
+    path: 'saved-entries',
+    loadComponent: () => import('./pages/saved-entries/saved-entries.page').then(m => m.SavedEntriesPage)
+  },
+  {
+    path: 'calculator',
+    loadComponent: () => import('./pages/calculator/calculator.page').then(m => m.CalculatorPage)
   },
 ];

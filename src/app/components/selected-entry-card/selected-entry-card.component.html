@@ -1,0 +1,61 @@
+<ion-grid *ngIf="selectedEntry">
+  <ion-row>
+    <ion-col size="12">
+      <ion-card-header *ngIf="selectedEntry.date && selectedEntry.tipsMade">
+        <ion-card-subtitle>{{ selectedEntry.date | date }}</ion-card-subtitle>
+        <ion-card-title>
+          {{ "TIPS_MADE" | translate }}
+          {{ selectedEntry.tipsMade | currency:currency }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card *ngFor="let waiter of selectedEntry.waiters">
+        <ion-card-content>
+          <ion-item-group>
+            <ion-list>
+              <ion-item>
+                <ion-card-title>
+                  {{ waiter.name }}
+                </ion-card-title>
+                <ion-avatar slot="end">
+                  <img
+                    [src]="sanitizer.bypassSecurityTrustUrl(waiter.avatar ? waiter.avatar : 'assets/iamges/goiaba.png')" />
+                </ion-avatar>
+              </ion-item>
+
+              <ion-item>
+                <ion-label class="tips-share-label" color="success">
+                  {{ 'TIPS_SHARE' | translate }}
+                </ion-label>
+                <ion-note class="tips-share" slot="end" color="success">
+                  {{ waiter.tipsShare | currency:currency }}
+                </ion-note>
+              </ion-item>
+
+              <ion-item>
+                <ion-label class="tips-share-label">{{ 'HOURS_WORKED' | translate }}</ion-label>
+                <ion-note class="tips-share" slot="end">
+                  {{ waiter.hours }} h
+                </ion-note>
+              </ion-item>
+            </ion-list>
+            <ion-list>
+              <ion-list-header>
+                <ion-label>{{ "POINST_LIST" | translate }}</ion-label>
+              </ion-list-header>
+              <ion-item *ngFor="let point of waiter.pointsList">
+                <ion-label> {{ point.label | translate }} </ion-label>
+                <ion-note class="tips-share" slot="end">{{ point.value }}</ion-note>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="total-points">{{ 'TOTAL_WAITERS_POINTS' | translate }}</ion-label>
+                <ion-badge slot="end" color='warning'>
+                  {{ waiter?.pointsList | sumPointsArray }}
+                </ion-badge>
+              </ion-item>
+            </ion-list>
+          </ion-item-group>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

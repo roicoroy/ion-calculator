@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="addPoint()">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon class="menu-icon" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" no-bounce has-bouncing="false" forceOverscroll="false" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title class="tabs-title">
+        {{ "POINTS_PAGE_TEXT" | translate }}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row *ngIf="viewState$ | async as vs">
+      <ion-col size="12" *ngIf="viewState$ | async as vs">
+        <ion-item *ngFor="let p of vs.pointsList">
+          <ion-label (click)="editPoint(p)">
+            {{ p.label | translate }}
+          </ion-label>
+          <ion-badge color="medium" (click)="editPoint(p)" slot="end">
+            <ion-text color="light">
+              {{ p.value }}
+            </ion-text>
+          </ion-badge>
+          <ion-buttons slot="end">
+            <ion-button (click)="delete(p)" expand="block" fill="clear" shape="round">
+              <ion-icon name="close" color='danger'></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

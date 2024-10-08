@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button size="small" fill="clear" (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce has-bouncing="false" forceOverscroll="false">
+  <ion-row>
+    <ion-col size="12">
+      <selected-entry-card [selectedEntry]="entry"></selected-entry-card>
+    </ion-col>
+  </ion-row>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="shareContent()">
+      <ion-icon color='light' name="share"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

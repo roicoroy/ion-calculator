@@ -1,0 +1,25 @@
+<ion-list *ngIf="viewState$ | async as vs">
+  <div *ngIf="vs.resultList; else pointsListView">
+    <ion-list-header>
+      <ion-label class="label">{{ "WHAT_IS_HAPPENING" | translate }}</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let result of vs.resultList">
+      <ion-label (click)="details(result)">
+        {{ result.date | date }}
+      </ion-label>
+      <ion-note slot="end">
+        {{ result.tipsMade | currency: currency }}
+      </ion-note>
+      <ion-icon class="close-icon" slot="end" name="close" color="danger" (click)="remove(result)"></ion-icon>
+    </ion-item>
+  </div>
+
+  <ng-template #pointsListView>
+    <ion-list-header>
+      <ion-label class="label">
+        {{ "ADD_ENTRY" | translate }}
+      </ion-label>
+    </ion-list-header>
+  </ng-template>
+
+</ion-list>

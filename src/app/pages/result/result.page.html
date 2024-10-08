@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="home()">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce has-bouncing="false" forceOverscroll="false">
+  <ion-grid>
+    <ion-row class="waiters-row">
+      <ion-col size-xs="12" size-sm="12" size-md="8" offset-md="2" size-lg="8" offset-lg="2">
+        <div *ngIf="viewState$ | async as vs">
+          <selected-entry-card [selectedEntry]="vs.selectedResult"></selected-entry-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

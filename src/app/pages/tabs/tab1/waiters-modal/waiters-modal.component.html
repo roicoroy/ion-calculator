@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" no-bounce has-bouncing="false" forceOverscroll="false">
+  <form [formGroup]="createWaiterForm" [ngxsForm]="formPath">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> {{ isEdit ? ('SAVE_EDITED_WAITER' | translate | uppercase) : ('ADD_NEW_WAITER' | translate | uppercase) }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-col size="12">
+          <ion-row>
+            <ion-col size-sm="6" offset-sm="3">
+              <app-image-picker [avatar]="avatar" (imagePick)="onImagePicked($event)"></app-image-picker>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="12" class="label">
+          <ion-item>
+            <ion-label position="stacked">
+              {{ 'NAME' | translate | uppercase}}:
+            </ion-label>
+            <ion-input ngDefaultControl class='label' inputmode='text' type="text" clearInput='true' clearOnEdit='true'
+              name='label' formControlName='name'></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>
+<ion-footer eqmHideWhenKeypadVisible @scaleHeight>
+  <ion-toolbar>
+    <ion-button [disabled]="!createWaiterForm.valid" (click)="isEdit ? saveEditedWaiter() : addNewWaiter()"
+      expand="block" fill="solid" shape="round">
+      <ion-text color="light">
+        {{isEdit ? ('SAVE_EDITED_WAITER' | translate | uppercase) : ('ADD_NEW_WAITER' | translate | uppercase) }}
+      </ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

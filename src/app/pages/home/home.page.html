@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon class="menu-icon" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content no-bounce has-bouncing="false" forceOverscroll="false" class="ion-padding">
+  <ion-grid>
+    <ion-row class="waiters-row">
+      <ion-col size-xs="12" size-sm="12" size-md="8" offset-md="2" size-lg="8" offset-lg="2">
+        <app-waiters-list></app-waiters-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button [disabled]="!hasData" (click)="calculatorPage()" expand="block" fill="solid" shape="round">
+      <ion-text color="light">
+        {{ 'START' | translate | uppercase }}!
+      </ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

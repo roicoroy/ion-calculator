@@ -1,0 +1,17 @@
+<ion-button aria-hidden="true" (click)="openLanguageChooser()" expand="block" fill="solid" shape="round"
+  [color]="translate.currentLang === 'en'  ? 'brittish' : 'brazil'">
+  <ion-row *ngIf="translate.currentLang === 'en'; else pt">
+    <ion-col>
+      <ion-label class="emoji-icon">
+        <i>🇬🇧</i>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ng-template #pt>
+    <ion-col>
+      <ion-label class="emoji-icon">
+        <i>🇧🇷</i>
+      </ion-label>
+    </ion-col>
+  </ng-template>
+</ion-button>
