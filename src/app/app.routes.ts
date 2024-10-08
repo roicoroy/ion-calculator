@@ -8,13 +8,6 @@ export const appRoutes: Route[] = [
     pathMatch: 'full',
   },
   {
-    path: 'file-opener',
-    loadChildren: () =>
-      import('./pages/file-opener/file-opener.module').then(
-        m => m.FileOpenerPageModule,
-      ),
-  },
-  {
     path: '',
     loadChildren: () => import('./pages/tabs/tabs.routes').then((m) => m.routes),
     canActivate: [TutorialGuard]
