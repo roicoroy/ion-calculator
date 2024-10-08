@@ -50,8 +50,8 @@
 			<key>NSAllowsArbitraryLoads</key>
 			<true />
 		</dict>
-		<key>UIFileSharingEnabled</key>
-		<string>yes</string>
+		<!-- <key>UIFileSharingEnabled</key>
+		<string>yes</string> -->
 		<key>LSSupportsOpeningDocumentsInPlace</key>
 		<string>yes</string>
 		<key>ITSAppUsesNonExemptEncryption</key>
