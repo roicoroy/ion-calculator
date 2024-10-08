@@ -14,8 +14,8 @@
     "assets:android": "npx @capacitor/assets generate --android",
     "easy-ios": "npx @capacitor/assets generate --assetPath './resources/ios' --iosProject 'ios/App' --iconBackgroundColor '#ffffff' --iconBackgroundColorDark '#000000' --splashBackgroundColor '#ffffff' --splashBackgroundColorDark '#000000'",
     "easy-and": "npx @capacitor/assets generate --assetPath './resources/android' --iosProject 'android' --iconBackgroundColor '#ffffff' --iconBackgroundColorDark '#000000' --splashBackgroundColor '#ffffff' --splashBackgroundColorDark '#000000'",
-    "android": "npx nx run nx-calculator:build --configuration=production && npx cap sync android && npx cap open android",
-    "ios": "npx nx run nx-calculator:build --configuration=development && npx cap sync ios && npx cap open ios",
+    "android": "ionic build && npx cap sync android && npx cap open android",
+    "ios": "ionic build && npx cap sync ios && npx cap open ios",
     "li-ios": "ionic capacitor run ios -l --external",
     "li-and": "ionic capacitor run android -l --external",
     "d-f": "npx nx run nx-calculator:build && firebase deploy"
