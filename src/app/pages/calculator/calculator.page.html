@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="home()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce has-bouncing="false" forceOverscroll="false">
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-margin">
+      <ion-col>
+        <form [formGroup]="entryForm" #entryFormRef="ngForm" [ngxsForm]="formPath">
+
+          <ion-item>
+            <ion-input labelPlacement="floating" value="{{ 'TIPS_AMOUNT' | translate }}" placeholder="£"
+              clearInput='true' clearOnEdit='true' type="number" inputmode="decimal" formControlName="tipsAmount">
+              <div slot="label">{{ 'TIPS_AMOUNT' | translate }}</div>
+            </ion-input>
+            <div class="ion-padding" *ngFor="let validation of validationMessages?.tipsAmount">
+              <ion-note class="error" color="danger"
+                *ngIf="entryForm?.get('tipsAmount')?.hasError(validation.type) && (entryForm?.get('tipsAmount')?.dirty || entryForm?.get('tipsAmount')?.touched)">
+                {{ validation.message | translate }}
+              </ion-note>
+            </div>
+          </ion-item>
+
+
+          <ion-accordion-group #accordionGroup>
+            <ion-accordion value="start">
+              <ion-item slot="header">
+                <ion-label>
+                  {{ "TODAYS_DATE" | translate }}
+                </ion-label>
+                <ion-note color="dark" slot="end">{{ entryForm.get('date')?.value | date }}</ion-note>
+              </ion-item>
+              <ion-datetime (ionChange)="toggleAccordion()" #dateTimeRef slot="content" displayFormat="MMMM YY"
+                size="cover" presentation="date" formControlName="date">
+              </ion-datetime>
+            </ion-accordion>
+          </ion-accordion-group>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="viewState$ | async as vs">
+      <ion-col *ngFor="let w of vs.waitersList; let i = index">
+        <ion-card class="calculator-card">
+          <ion-card-header>
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <ion-img [src]="w?.avatar ? w?.avatar : 'assets/shapes.svg'"></ion-img>
+              </ion-avatar>
+              <ion-note color="dark" class="name">
+                {{ w.name }}
+              </ion-note>
+              <ion-buttons slot="end">
+                <ion-button (click)="showPicker(w, i)" shape="round">
+                  <ion-icon *ngIf="!w.hours" name="timer-sharp"></ion-icon>
+                  <ion-badge *ngIf="w.hours">
+                    {{ w.hours }}
+                  </ion-badge>
+                </ion-button>
+              </ion-buttons>
+            </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-row class='ion-text-center'>
+              <ion-col class="background" size="12" *ngIf='w?.pointsList'>
+                <ion-list *ngFor='let point of w?.pointsList'>
+                  <ion-item>
+                    <ion-label>
+                      {{ point.label | translate }}
+                    </ion-label>
+                    <ion-label slot="end">{{ point.value }}</ion-label>
+                  </ion-item>
+                </ion-list>
+                <ion-list>
+                  <ion-item>
+                    <ion-label>{{ 'TOTAL_WAITERS_POINTS' | translate }}</ion-label>
+                    <ion-badge slot="end" color='warning'>
+                      {{ w?.pointsList | sumPointsArray }}
+                    </ion-badge>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer *ngIf="viewState$ | async as vs" eqmHideWhenKeypadVisible @scaleHeight>
+  <ion-toolbar>
+    <ion-button [disabled]="!entryForm.valid && !submitButtonState(vs.waitersList)" (click)="calculate(vs.waitersList)"
+      expand="block" fill="solid" shape="round">
+      <ion-text color="light">
+        {{ 'SUBMIT' | translate }}
+      </ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

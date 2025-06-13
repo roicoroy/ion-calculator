@@ -1,0 +1,37 @@
+<ion-list *ngIf="viewState$ | async as vs">
+  <div *ngIf="vs.waitersList.length >= 1; else noData">
+    <ion-card class="waiter-list" lines="none" *ngFor="let waiter of vs?.waitersList">
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label color="primary" slot="start" class="ion-text-wrap waiters-name">
+            {{ waiter.name }}
+          </ion-label>
+          <ion-avatar slot="end">
+            <ion-img [src]="waiter.avatar ? waiter.avatar : 'assets/images/goiaba.png'"></ion-img>
+          </ion-avatar>
+        </ion-item>
+        <ion-col *ngIf="waiter.pointsList">
+          <ion-item lines="none" class="result-tips" *ngFor="let p of waiter.pointsList">
+            <ion-text slot="start">
+              {{ p.label | translate }}
+            </ion-text>
+            <ion-note class="bold" slot="end">
+              {{ p.value }}
+            </ion-note>
+          </ion-item>
+          <ion-item lines="none" class="result-tips" *ngIf="waiter.totalPoints">
+            <ion-label>
+              {{ 'TOTAL_POINTS' | translate }}
+            </ion-label>
+            <ion-note class="bold" slot="end">
+              {{ waiter.totalPoints }}
+            </ion-note>
+          </ion-item>
+        </ion-col>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ng-template #noData>
+    <h1>{{ 'ADD_WAITERS_TO_START' | translate }}</h1>
+  </ng-template>
+</ion-list>

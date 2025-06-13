@@ -1,0 +1,94 @@
+PODS:
+  - Capacitor (6.1.2):
+    - CapacitorCordova
+  - CapacitorApp (6.0.1):
+    - Capacitor
+  - CapacitorAppLauncher (6.0.2):
+    - Capacitor
+  - CapacitorCamera (6.0.2):
+    - Capacitor
+  - CapacitorCordova (6.1.2)
+  - CapacitorDevice (6.0.1):
+    - Capacitor
+  - CapacitorFilesystem (6.0.1):
+    - Capacitor
+  - CapacitorHaptics (6.0.1):
+    - Capacitor
+  - CapacitorKeyboard (6.0.2):
+    - Capacitor
+  - CapacitorShare (6.0.2):
+    - Capacitor
+  - CapacitorSplashScreen (6.0.2):
+    - Capacitor
+  - CapacitorStatusBar (6.0.1):
+    - Capacitor
+  - CapawesomeCapacitorFilePicker (6.1.0):
+    - Capacitor
+  - CapawesomeTeamCapacitorFileOpener (6.1.0):
+    - Capacitor
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/.pnpm/@capacitor+ios@6.1.2_@capacitor+core@6.1.2/node_modules/@capacitor/ios`)"
+  - "CapacitorApp (from `../../node_modules/.pnpm/@capacitor+app@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/app`)"
+  - "CapacitorAppLauncher (from `../../node_modules/.pnpm/@capacitor+app-launcher@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/app-launcher`)"
+  - "CapacitorCamera (from `../../node_modules/.pnpm/@capacitor+camera@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/camera`)"
+  - "CapacitorCordova (from `../../node_modules/.pnpm/@capacitor+ios@6.1.2_@capacitor+core@6.1.2/node_modules/@capacitor/ios`)"
+  - "CapacitorDevice (from `../../node_modules/.pnpm/@capacitor+device@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/device`)"
+  - "CapacitorFilesystem (from `../../node_modules/.pnpm/@capacitor+filesystem@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/filesystem`)"
+  - "CapacitorHaptics (from `../../node_modules/.pnpm/@capacitor+haptics@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/haptics`)"
+  - "CapacitorKeyboard (from `../../node_modules/.pnpm/@capacitor+keyboard@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/keyboard`)"
+  - "CapacitorShare (from `../../node_modules/.pnpm/@capacitor+share@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/share`)"
+  - "CapacitorSplashScreen (from `../../node_modules/.pnpm/@capacitor+splash-screen@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/splash-screen`)"
+  - "CapacitorStatusBar (from `../../node_modules/.pnpm/@capacitor+status-bar@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/status-bar`)"
+  - "CapawesomeCapacitorFilePicker (from `../../node_modules/.pnpm/@capawesome+capacitor-file-picker@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome/capacitor-file-picker`)"
+  - "CapawesomeTeamCapacitorFileOpener (from `../../node_modules/.pnpm/@capawesome-team+capacitor-file-opener@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome-team/capacitor-file-opener`)"
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/.pnpm/@capacitor+ios@6.1.2_@capacitor+core@6.1.2/node_modules/@capacitor/ios"
+  CapacitorApp:
+    :path: "../../node_modules/.pnpm/@capacitor+app@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/app"
+  CapacitorAppLauncher:
+    :path: "../../node_modules/.pnpm/@capacitor+app-launcher@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/app-launcher"
+  CapacitorCamera:
+    :path: "../../node_modules/.pnpm/@capacitor+camera@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/camera"
+  CapacitorCordova:
+    :path: "../../node_modules/.pnpm/@capacitor+ios@6.1.2_@capacitor+core@6.1.2/node_modules/@capacitor/ios"
+  CapacitorDevice:
+    :path: "../../node_modules/.pnpm/@capacitor+device@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/device"
+  CapacitorFilesystem:
+    :path: "../../node_modules/.pnpm/@capacitor+filesystem@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/filesystem"
+  CapacitorHaptics:
+    :path: "../../node_modules/.pnpm/@capacitor+haptics@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/haptics"
+  CapacitorKeyboard:
+    :path: "../../node_modules/.pnpm/@capacitor+keyboard@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/keyboard"
+  CapacitorShare:
+    :path: "../../node_modules/.pnpm/@capacitor+share@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/share"
+  CapacitorSplashScreen:
+    :path: "../../node_modules/.pnpm/@capacitor+splash-screen@6.0.2_@capacitor+core@6.1.2/node_modules/@capacitor/splash-screen"
+  CapacitorStatusBar:
+    :path: "../../node_modules/.pnpm/@capacitor+status-bar@6.0.1_@capacitor+core@6.1.2/node_modules/@capacitor/status-bar"
+  CapawesomeCapacitorFilePicker:
+    :path: "../../node_modules/.pnpm/@capawesome+capacitor-file-picker@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome/capacitor-file-picker"
+  CapawesomeTeamCapacitorFileOpener:
+    :path: "../../node_modules/.pnpm/@capawesome-team+capacitor-file-opener@6.1.0_@capacitor+core@6.1.2/node_modules/@capawesome-team/capacitor-file-opener"
+
+SPEC CHECKSUMS:
+  Capacitor: 69c7f687aabb8d85e543497411e40638b5cc08c0
+  CapacitorApp: f51c08c64df914fc934239fd1b3fc809d62a02f6
+  CapacitorAppLauncher: b957226d48108ecba7b33f02553f85d5e11c4455
+  CapacitorCamera: 65a0d1235114a6a5042e664d6da8d213927f7aa0
+  CapacitorCordova: f48c89f96c319101cd2f0ce8a2b7449b5fb8b3dd
+  CapacitorDevice: da1884f895e17992648b27f6c8ee2be72cd0ce2e
+  CapacitorFilesystem: 30941c0fea0773fcaedab18e262b339f5b9c06bc
+  CapacitorHaptics: 05d33e20e394b1977dfd2a00a2621e04098164c1
+  CapacitorKeyboard: 5bf4458dd989b56a60ea15c92cbca5fbfae6e9f9
+  CapacitorShare: 5d49f1b220e991372b4d5d34be9a6080a042bae4
+  CapacitorSplashScreen: b46e61cc4345d73d510530b0c845a30e3602db40
+  CapacitorStatusBar: 9ed7f06318fd436917072a9bf60fda56d12c8bdb
+  CapawesomeCapacitorFilePicker: eea8bc9566f92438dda34523f906762990e28fd5
+  CapawesomeTeamCapacitorFileOpener: 63ca39b15225e0e28f90807e510e8c8933834b34
+
+PODFILE CHECKSUM: 06100f7c8dd338856798dc63737d8695c2403964
+
+COCOAPODS: 1.16.2

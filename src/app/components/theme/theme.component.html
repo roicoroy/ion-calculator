@@ -1,0 +1,6 @@
+<ion-col class="ion-text-center ic" size="3" *ngIf="appDarkModeIcon$ | async as icon">
+  <ion-icon [name]="icon" [color]="icon === 'sunny' ? 'warning' : 'light' "></ion-icon>
+</ion-col>
+<ion-col size="9" class="tog">
+  <ion-toggle [checked]=" appDarkMode$ | async " (ionChange)="onChangeTheme($event)"></ion-toggle>
+</ion-col>

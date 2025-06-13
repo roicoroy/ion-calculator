@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" no-bounce has-bouncing="false" forceOverscroll="false">
+  <form [formGroup]="createPointsForm" [ngxsForm]="formPath" #createPointFormRef="ngForm">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          {{ isEdit ? ('SAVE_EDITED_POINT' | translate | uppercase) : ('ADD_NEW_POINT' | translate | uppercase) }}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-col size="12" class="label">
+          <ion-item>
+            <ion-label position="stacked">
+              {{ 'LABEL' | translate | uppercase }}:
+            </ion-label>
+            <ion-input ngDefaultControl class='label' inputmode='text' type="text" clearInput='true' clearOnEdit='true'
+              name='label' formControlName='label'></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item lines="none">
+            <ion-label position="stacked">
+              {{ 'VALUE' | translate | uppercase }}:
+            </ion-label>
+            <ion-select interface="action-sheet" #selectRef multiple="false" formControlName="value">
+              <ion-select-option *ngFor="let v of values" [value]="v.value">{{v.value}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>
+<ion-footer eqmHideWhenKeypadVisible @scaleHeight>
+  <ion-toolbar>
+    <ion-button (click)="isEdit ? saveEditedPoint() : addNewPoint()" expand="block" fill="solid" shape="round">
+      <ion-text color="light">
+        {{isEdit ? ('SAVE_EDITED_POINT' | translate | uppercase) : ('ADD_NEW_POINT' | translate | uppercase ) }}
+      </ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
